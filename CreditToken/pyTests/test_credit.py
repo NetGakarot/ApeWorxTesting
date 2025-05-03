@@ -1,6 +1,7 @@
 from ape import accounts, project
 import pytest
 from pytest import approx
+from ape.exceptions import ContractLogicError
 
 @pytest.fixture
 def credit():
@@ -46,5 +47,6 @@ def test_fail_transfer(credit):
     admin,contract = credit
     user1 = accounts.test_accounts[1]
     user2 = accounts.test_accounts[2]
-    with pytest.raises(Exception):
+    with pytest.raises(ContractLogicError) as e:
         contract.transfer(user2,int(1e18),sender=user1)
+    assert "InsufficientBalance" in str(e.value)
