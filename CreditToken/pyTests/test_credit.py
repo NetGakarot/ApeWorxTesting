@@ -49,4 +49,4 @@ def test_fail_transfer(credit):
     user2 = accounts.test_accounts[2]
     with pytest.raises(ContractLogicError) as e:
         contract.transfer(user2,int(1e18),sender=user1)
-    assert "InsufficientBalance" in str(e.value)
+        assert "InsufficientBalance" in str(e.value)
