@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
-/*24.	Credit Scoring System
+/Credit Scoring System
 Assign scores to users based on tx activity (mock logic). Use struct, mapping, and view 
 functions for external querying.
 */
